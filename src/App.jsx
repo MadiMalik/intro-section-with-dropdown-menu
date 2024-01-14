@@ -1,38 +1,90 @@
 import { useState } from 'react';
 import './App.css';
-import mainLogo from './images/logo.svg';
-import menu from './images/icon-menu.svg';
+import logo from './images/logo.svg';
+import openMenu from './images/icon-menu.svg';
+import closeMenu from './images/icon-close-menu.svg';
 import clientImg1 from './images/client-databiz.svg';
 import clientImg2 from './images/client-audiophile.svg';
 import clientImg3 from './images/client-meet.svg';
 import clientImg4 from './images/client-maker.svg';
 import mobile from './images/image-hero-mobile.png';
 import desktop from './images/image-hero-desktop.png';
+import arrowDown from './images/icon-arrow-down.svg';
+import arrowUp from './images/icon-arrow-up.svg';
+
+import todoList from './images/icon-todo.svg'
+import calender from './images/icon-calendar.svg'
+import reminder from './images/icon-reminders.svg'
+import planning from './images/icon-planning.svg'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const handleOpenMenu = () => {
+    const navbar = document.querySelector(".navbar")
+    const menuButton = document.querySelector('.menu-button');
+    navbar.classList.toggle('open')
+
+    if(navbar.classList.contains("open")){
+      menuButton.src = closeMenu
+    }else{
+      menuButton.src = openMenu
+    }
+  }
 
   return (
     <>
       <div className="wrapper w-full bg-white ">
         <header className='w-full flex justify-between items-center pt-6 pb-6 px-8  lg:justify-start'>
-          <img className='me-34 w-[7rem]' src={mainLogo} alt="Logo" />
+          <div>
+            <img src={logo} alt="Logo " />
 
-          <nav className='w-full justify-between items-center hidden lg:flex'>
-            <ul className='flex justify-between items-center gap-x-8'>
-              <li>Features</li>
-              <li>Company</li>
-              <li>Careers</li>
-              <li>About</li>
-            </ul>
+            <nav className='navbar '>
+              <div>
+                <button className='flex items-center justify-start'>
+                  Features <img src={arrowDown} alt="Arrow down" className='ml-2'/>
+                </button>
 
-            <div>
-              <a href="#">Login</a>
-              <a href="#">Ragister</a>
-            </div>
-          </nav>
+                <ul className='mt-2'>
+                  <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={todoList} alt="" />Todo List</li>
+                  <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={calender} alt="" />Calender</li>
+                  <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={reminder} alt="" />Reminders</li>
+                  <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={planning} alt="" />Planning</li>
+                </ul>
+              </div>
 
-          <img className='lg:hidden ' src={menu} alt="Menu icon" />
+              <div>
+                <button className='flex items-center justify-start'>
+                  Company <img src={arrowDown} alt="Arrow down" className='ml-2' />
+                </button>
+
+                <ul className='mt-2 ml-3'>
+                  <li className='flex items-center justify-start text-sm mb-2'>History</li>
+                  <li className='flex items-center justify-start text-sm mb-2'>Our Team</li>
+                  <li className='flex items-center justify-start text-sm mb-2'>Blog</li>
+                </ul>
+              </div>
+
+              <div className='mb-2 lg:mb-0'>
+                <button>Careers</button>
+              </div>
+
+              <div>
+                <button>About</button>
+              </div>
+            </nav>
+          </div>
+
+          <div>
+            <button>
+              <img className='menu-button' onClick={handleOpenMenu} src={openMenu} alt="menu icon" />
+            </button>
+          </div>
+
+          <div className='hidden lg:block'>
+            <button>Login</button>
+            <button>Register</button>
+          </div>
         </header>
 
         <main className='flex flex-col-reverse py-20 md:grid md:gap-10 md:grid-cols-2 md:place-items-center max-w-4xl lg:max-w-5xl md:mx-auto'>
