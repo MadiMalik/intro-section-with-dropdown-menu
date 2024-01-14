@@ -14,11 +14,21 @@ a {
 }
 
 body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  /* box-sizing: border-box; */
+
   font-family: 'Epilogue', sans-serif;
   font-size: 1.8rem;
 }
 
 
+img{
+  max-width: 100%;
+}
+
+ul{
+  list-style: none;
+}
+p, 
+li{
+  @apply opacity-75;
+}

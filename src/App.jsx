@@ -6,8 +6,8 @@ import clientImg1 from './images/client-databiz.svg';
 import clientImg2 from './images/client-audiophile.svg';
 import clientImg3 from './images/client-meet.svg';
 import clientImg4 from './images/client-maker.svg';
-import heroImgMobile from './images/image-hero-mobile.png';
-import heroImgDesktop from './images/image-hero-desktop.png';
+import mobile from './images/image-hero-mobile.png';
+import desktop from './images/image-hero-desktop.png';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,29 +35,33 @@ function App() {
           <img className='lg:hidden ' src={menu} alt="Menu icon" />
         </header>
 
-        <main>
-          <div className="img-box">
-            <img className='w-full h- object-cover lg:hidden' src={heroImgMobile} alt="Hero Image Mobile" />
-
-            <img className='w-full sm:hidden lg:inline-block' src={heroImgDesktop} alt="Hero Image desktop" />
-          </div>
-          <div className="content">
-            <h1 className='font-bold'>
+        <main className='flex flex-col-reverse py-20 md:grid md:gap-10 md:grid-cols-2 md:place-items-center max-w-4xl lg:max-w-5xl md:mx-auto'>
+        
+          <section className="text-center md:text-left px-5 xl:px-0 mt-10 md:mt-0">
+            <h1 className='font-bold text-5xl lg:text-8xl mb-5'>
               Make remote work
             </h1>
-            <p>
+            <p className="mb-7">
               Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
             </p>
 
-            <a href="#">Learn more</a>
+            <a className='bg-black-500 rounded-lg shadow text-gray-200 font-bold hover:opacity-75 transition-all duration-150 pt-3 pb-3 px-8 cursor-pointer'
+             href="#">Learn more</a>
 
-            <ul className='flex justify-between items-center'>
-              <li><img src={clientImg1} alt="" /></li>
-              <li><img src={clientImg2} alt="" /></li>
-              <li><img src={clientImg3} alt="" /></li>
-              <li><img src={clientImg4} alt="" /></li>
+            <ul className='grid grid-cols-4 gap-1 place-items-center mt-10 md:place-items-start'>
+              <li><img src={clientImg1} className='w-16 md:w-24' alt="" /></li>
+              <li><img src={clientImg2} className='w-16 md:w-24' alt="" /></li>
+              <li><img src={clientImg3} className='w-16 md:w-24' alt="" /></li>
+              <li><img src={clientImg4} className='w-16 md:w-24' alt="" /></li>
             </ul>
-          </div>
+          </section>
+
+          <section>
+            <picture>
+              <source media="(min-width: 768px)" srcSet={desktop} />
+              <img src={mobile} alt="" className="w-full" />
+            </picture>
+          </section>
         </main>
       </div>
     </>
