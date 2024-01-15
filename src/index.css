@@ -14,8 +14,7 @@ a {
 }
 
 body {
-  /* box-sizing: border-box; */
-
+  box-sizing: border-box;
   font-family: 'Epilogue', sans-serif;
   font-size: 1.8rem;
 }
@@ -33,20 +32,108 @@ li{
   @apply opacity-75;
 }
 
+.wrapper{
+  min-width: 100%;
+}
+
 .navbar{
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  bottom: 0;
+  padding: 8rem 3rem;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.navbar.open{
+  right: 0;
+  z-index: 99;
+  background-color: white;
+  @apply text-gray-300;
+}
+
+.menu-button{
+  z-index: 111;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.wrapper1{
+  min-width: 100%;
+}
+
+
+.navbar1{
   position: absolute;
   top: -100%;
   right: 0;
   width: 50%;
-  /* left: 0; */
   bottom: 0;
-  background-color: white;
   padding: 1rem 3rem;
   transition: all 0.3s ease-in-out;
   z-index: -1;
 }
 
-.navbar.open{
+.navbar1.open{
   top: 5rem;
   z-index: 99;
+  background-color: white;
+}
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 98; 
+  transition: all 0.5s  ;
+}
+.overlay.show {
+  display: block;
+}
+
+
+@media (min-width: 1024px){
+  .navbar{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    z-index: auto;
+    padding: 0;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+  
+  .navbar.open{
+    top: 0;
+    background-color: transparent;
+    z-index: auto;
+  }
+
+  .navbar div{
+    @apply mr-6;
+  }
+
+  .navbar div ul{
+    position: absolute;
+    width: 10rem;
+    background-color: white;
+  }
+}
+
+@media (min-width: 1440px){
+  #root{
+    margin: 0 auto;
+    width: 1440px ;
+    @apply shadow;
+  }
 }
