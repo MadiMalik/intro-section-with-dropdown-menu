@@ -45,50 +45,50 @@ function Menu() {
                   </button>
                   {openFeatures && 
                     <ul className='mt-2 ml-3 lg:ml-0 lg:p-3 lg:shadow'>
-                    <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={todoList} alt="" />Todo List</li>
-                    <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={calender} alt="" />Calender</li>
-                    <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={reminder} alt="" />Reminders</li>
-                    <li className='flex items-center justify-start text-sm mb-2'><img className='mr-2' src={planning} alt="" />Planning</li>
+                    <li className='flex items-center justify-start text-sm mb-2 cursor-pointer hover:text-gray-300'><img className='mr-2' src={todoList} alt="" />Todo List</li>
+                    <li className='flex items-center justify-start text-sm mb-2 cursor-pointer hover:text-gray-300'><img className='mr-2' src={calender} alt="" />Calender</li>
+                    <li className='flex items-center justify-start text-sm mb-2 cursor-pointer hover:text-gray-300'><img className='mr-2' src={reminder} alt="" />Reminders</li>
+                    <li className='flex items-center justify-start text-sm mb-2 cursor-pointer hover:text-gray-300'><img className='mr-2' src={planning} alt="" />Planning</li>
                   </ul>
                   }
                 </div>
   
                 <div className='mt-4 lg:mt-0'>
-                  <a onClick={() =>setOpenCompany(!openCompany)} className='flex items-center justify-start hover:text-gray-300'>
+                  <a onClick={() =>setOpenCompany(!openCompany)} className='flex items-center justify-start hover:text-gray-300 cursor-pointer'>
                     Company {openCompany ?  <img src={arrowUp} alt="Arrow Up" className='ml-4' /> :  <img src={arrowDown} alt="Arrow down" className='ml-4' />}
                   </a>
   
-                  {openCompany && <ul className='mt-2 ml-3 lg:ml-0 lg:p-3 lg:shadow'>
-                    <li className='flex items-center justify-start text-sm mb-2'>History</li>
-                    <li className='flex items-center justify-start text-sm mb-2'>Our Team</li>
-                    <li className='flex items-center justify-start text-sm mb-2'>Blog</li>
+                  {openCompany && <ul className='mt-2 ml-3 lg:ml-0 lg:p-3 lg:shadow cursor-pointer'>
+                    <li className='flex items-center justify-start text-sm mb-2 cursor-pointer hover:text-gray-300'>History</li>
+                    <li className='flex items-center justify-start text-sm mb-2 cursor-pointer hover:text-gray-300'>Our Team</li>
+                    <li className='flex items-center justify-start text-sm mb-2 cursor-pointer hover:text-gray-300'>Blog</li>
                   </ul>}
                 </div>
   
-                <div className='mb-2 lg:mb-0 mt-6 lg:mt-0 hover:text-gray-300'>
+                <div className='mb-2 lg:mb-0 mt-6 lg:mt-0 hover:text-gray-300 cursor-pointer'>
                   <a>Careers</a>
                 </div>
   
-                <div className='mt-4 lg:mt-0 hover:text-gray-300'>
+                <div className='mt-4 lg:mt-0 hover:text-gray-300 cursor-pointer'>
                   <a>About</a>
                 </div>
 
-                <div className='grid mt-16 lg:hidden'>
-                  <a className='opacity-75 hover:text-black-500'>Login</a>
-                  <a className='border-2 border-gray-300 opacity-75 py-2 rounded-3xl mt-6 hover:bg-black-500 transition-all'>Register</a>
+                <div className='grid mt-16 lg:hidden text-center'>
+                  <a className='opacity-75 hover:text-black-500 cursor-pointer'>Login</a>
+                  <a className='border-2 border-gray-300 opacity-75 py-2 rounded-3xl mt-6 hover:bg-black-500 transition-all cursor-pointer'>Register</a>
                 </div>
               </nav>
             </div>
   
             <div className='lg:hidden'>
               <a>
-                <img className='menu-button' onClick={handleOpenMenu} src={openMenu} alt="menu icon" />
+                <img className='menu-button cursor-pointer' onClick={handleOpenMenu} src={openMenu} alt="menu icon" />
               </a>
             </div>
   
             <div className='hidden lg:block'>
-              <a className='mr-10 opacity-75 hover:text-gray-300'>Login</a>
-              <a className='border-2 border-black-500 px-6 py-2 rounded-3xl hover:bg-black-500 hover:text-gray-200'>Register</a>
+              <a className='mr-10 opacity-75 hover:text-gray-300 cursor-pointer'>Login</a>
+              <a className='border-2 border-black-500 px-6 py-2 rounded-3xl hover:bg-black-500 hover:text-gray-200 cursor-pointer'>Register</a>
             </div>
           </header>
 

@@ -32,21 +32,21 @@ function App() {
               Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
             </p>
 
-            <a className='bg-black-500 rounded-lg shadow text-gray-200 font-bold hover:opacity-75 transition-all duration-150 pt-3 pb-3 px-8 mt-4 cursor-pointer lg:mt-12'
+            <a className='bg-black-500 rounded-lg shadow text-gray-200 font-bold hover:opacity-75 transition-all duration-150 pt-3 pb-3 px-8 mt-4 cursor-pointer lg:mt-10'
              href="#">Learn more</a>
 
-            <ul className='grid grid-cols-4 gap-1 place-items-center mt-12 lg:mt-10 md:place-items-start lg:pt-12'>
-              <li><img src={clientImg1} className='w-16 md:w-24' alt="" /></li>
-              <li><img src={clientImg2} className='w-16 md:w-24' alt="" /></li>
-              <li><img src={clientImg3} className='w-16 md:w-24' alt="" /></li>
-              <li><img src={clientImg4} className='w-16 md:w-24' alt="" /></li>
+            <ul className='grid grid-cols-4 gap-1 place-items-center mt-12 lg:mt-10 md:place-items-start  lg:pt-8'>
+              <li><img src={clientImg1} className='w-[7rem] md:w-[8rem]' alt="" /></li>
+              <li><img src={clientImg2} className='w-[7rem] md:w-[8rem] text-3xl' alt="" /></li>
+              <li><img src={clientImg3} className='w-[7rem] md:w-[8rem]' alt="" /></li>
+              <li><img src={clientImg4} className='w-[7rem] md:w-[8rem]' alt="" /></li>
             </ul>
           </section>
 
           <section>
             <picture>
               <source media="(min-width: 768px)" srcSet={desktop} />
-              <img src={mobile} alt="" className="w-full lg:h-min" />
+              <img src={mobile} alt="" className="w-full lg:h-[54rem]" />
             </picture>
           </section>
         </main>

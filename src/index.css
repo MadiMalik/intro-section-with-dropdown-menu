@@ -17,6 +17,7 @@ body {
   box-sizing: border-box;
   font-family: 'Epilogue', sans-serif;
   font-size: 1.8rem;
+  overflow-x: hidden;
 }
 
 
@@ -125,7 +126,7 @@ li{
 
   .navbar div ul{
     position: absolute;
-    width: 10rem;
+    width: 12rem;
     background-color: white;
   }
 }
